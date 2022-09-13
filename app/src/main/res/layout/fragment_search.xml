@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    >
     <data>
         <variable
             name="searchTrains"
@@ -58,8 +58,6 @@
                     android:hint="@string/hint_departure_city"
                     android:textColor="@android:color/black"
                     android:layout_marginStart="10dp" />
-                <!--                    android:text='@{(TextUtils.isEmpty(client.checkInDate) &amp;&amp; TextUtils.isEmpty(client.checkInTime))? "" : client.formatDateForOneSignal(client.checkInDate, client.checkInTime)}'-->
-                <!--                    android:onClick="@{() -> addClientDialogFragment.showCheckInDatePickerDialog()}"/>-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -75,7 +73,6 @@
                     android:hint="@string/hint_destination_city"
                     android:textColor="@android:color/black"
                     android:layout_marginStart="10dp" />
-                <!--                    android:text='@{(TextUtils.isEmpty(client.checkOutDate) &amp;&amp; TextUtils.isEmpty(client.checkOutTime))? "" : client.formatDateForOneSignal(client.checkOutDate,client.checkOutTime)}'-->
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -94,9 +91,6 @@
                     android:hint="@string/hint_departure_date"
                     android:textColor="@android:color/black"
                     android:layout_marginStart="10dp" />
-
-                <!--                    android:text="@={searchTrains.depDate}"-->
-                <!--                    />-->
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/findTicketsButton"

@@ -22,8 +22,8 @@ class SearchViewModel(application: Application) : AndroidViewModel(application) 
     val trainsMutableLiveData =  MutableLiveData<Trains>()
     val progressBarLiveData = MutableLiveData<Boolean>()
     fun authenticate(){
-        Retrofit.getApi(Constants.BASE_URL)
-            ?.authenticate(Authentication(Constants.APP_KEY, Constants.APP_SECRET))?.enqueue(object :
+        Retrofit.getApi(Constants.BASE_URL).authenticate(Authentication(Constants.APP_KEY, Constants.APP_SECRET))
+            .enqueue(object :
                 Callback<Token> {
                 override fun onResponse(call: Call<Token>, response: Response<Token>) {
                     val authResponse = response.body()
@@ -40,7 +40,7 @@ class SearchViewModel(application: Application) : AndroidViewModel(application) 
     }
     fun getListOfTrains(searchTrains: SearchTrains){
         Retrofit.getApi(Constants.BASE_URL)
-            ?.getTrainList(searchTrains)?.enqueue(object : Callback<Trains> {
+            .getTrainList(searchTrains).enqueue(object : Callback<Trains> {
                 override fun onResponse(call: Call<Trains>, response: Response<Trains>) {
                     progressBarLiveData.postValue(false)
                     val trainsResponse = response.body()

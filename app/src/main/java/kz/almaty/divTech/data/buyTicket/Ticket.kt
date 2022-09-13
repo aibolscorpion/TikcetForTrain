@@ -16,5 +16,5 @@ data class Ticket(
     @SerializedName("carNumber") var carNumber: String?,
     @SerializedName("placeNumber") var placeNumber: Int?,
     @Embedded
-    @SerializedName("passenger") var passenger: Passanger? )
+    @SerializedName("passenger") var passenger: Passenger? )
 

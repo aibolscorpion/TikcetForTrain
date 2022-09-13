@@ -1,10 +1,7 @@
 package kz.almaty.divTech.data.buyTicket
 
 import android.os.Parcelable
-import androidx.annotation.NonNull
 import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
@@ -18,4 +15,4 @@ data class BuyTicket(
     @SerializedName("carNumber") var carNumber: String?,
     @SerializedName("placeNumber") var placeNumber: Int?,
     @Embedded
-    @SerializedName("passenger") var passenger: Passanger?) : Parcelable
+    @SerializedName("passenger") var passenger: Passenger?) : Parcelable

@@ -1,6 +1,5 @@
 package kz.almaty.divTech.api
 
-import android.content.Context
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,7 +9,7 @@ object Retrofit {
     private var retrofit : Retrofit? = null
     private lateinit var apiService: ApiService
 
-    fun getApi(baseUrl: String): ApiService? {
+    fun getApi(baseUrl: String): ApiService {
         apiService = getRetrofitClient(baseUrl).create(ApiService::class.java)
         return apiService
     }

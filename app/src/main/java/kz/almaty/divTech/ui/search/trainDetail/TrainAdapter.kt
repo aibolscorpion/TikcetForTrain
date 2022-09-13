@@ -12,7 +12,7 @@ import kz.almaty.divTech.R
 import kz.almaty.divTech.data.searchTrains.Train
 import kz.almaty.divTech.utils.DateFormatter
 
-class CustomAdapter(private val trainListener: TrainClickedListener, private val trainList: List<Train>?) : RecyclerView.Adapter<CustomAdapter.TrainViewHolder>() {
+class TrainAdapter(private val trainListener: TrainClickedListener, private val trainList: List<Train>?) : RecyclerView.Adapter<TrainAdapter.TrainViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrainViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_train, parent, false)
@@ -49,16 +49,12 @@ class CustomAdapter(private val trainListener: TrainClickedListener, private val
     }
 
     override fun getItemCount(): Int {
-        if(trainList == null){
-            return 0
-        }else{
-            return trainList.size
-        }
+        return trainList?.size ?: 0
     }
 
     inner class TrainViewHolder(containerView: View) : RecyclerView.ViewHolder(containerView) {
          val departureDateTextView: TextView = itemView.findViewById(R.id.departureDateTextView)
-        val departureTimeTextView: TextView = itemView.findViewById(R.id.departureTimeTextView)
+         val departureTimeTextView: TextView = itemView.findViewById(R.id.departureTimeTextView)
          val arrivalDateTextView: TextView = itemView.findViewById(R.id.arrivalDateTextView)
          val arrivalTimeTextView: TextView = itemView.findViewById(R.id.arrivalTimeTextView)
          val trainNumberTextView: TextView = itemView.findViewById(R.id.trainNumberTextView)

@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.navigation.fragment.findNavController
 import kz.almaty.divTech.R
-import kz.almaty.divTech.data.buyTicket.Passanger
+import kz.almaty.divTech.data.buyTicket.Passenger
 import kz.almaty.divTech.data.buyTicket.Ticket
 import kz.almaty.divTech.data.searchTrains.Train
 
@@ -43,7 +43,7 @@ class BuyTicketFragment : Fragment() {
                 Toast.makeText(requireContext(), R.string.fill_all_fields, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            buyTicket.passenger = Passanger(nameEditText.text.toString(), surnameEditText.text.toString())
+            buyTicket.passenger = Passenger(nameEditText.text.toString(), surnameEditText.text.toString())
             viewModel.buyTicket(buyTicket)
 
             val ticket = Ticket(depStationCode =  buyTicket.depStationCode, arrStationCode = buyTicket.arrStationCode, depDateTime= train.departureDatetime, arrDateTime = train.arrivalDatetime,

@@ -1,6 +1,5 @@
 package kz.almaty.divTech.ui.search.trainDetail
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,7 +23,7 @@ class TrainDetailFragment : Fragment(), TrainClickedListener {
         val trains = arguments.trains
         buyTicket = arguments.buyTicket
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = CustomAdapter(this, trains.trains)
+        recyclerView.adapter = TrainAdapter(this, trains.trains)
         return view
     }
 

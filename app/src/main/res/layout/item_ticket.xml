@@ -35,7 +35,6 @@
                 android:id="@+id/trainNumberTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="01"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -57,7 +56,6 @@
                 android:id="@+id/carNumberTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="29"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -79,7 +77,6 @@
                 android:id="@+id/placeNumberTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="13"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -134,7 +131,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat2"
                 app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/linearLayoutCompat2"
@@ -199,7 +196,6 @@
                     android:id="@+id/nameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Айбол"
                     android:textColor="@color/black"
                     android:layout_gravity="center"
                     android:textSize="16sp"
@@ -222,7 +218,6 @@
                     android:id="@+id/surnameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Онгаров"
                     android:textSize="16sp"
                     android:layout_gravity="center"
                     android:textColor="@color/black"

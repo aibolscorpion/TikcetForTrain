@@ -19,8 +19,8 @@
         <entry key="app/src/main/res/layout/fragment_tickets.xml" value="0.3774037679036459" />
         <entry key="app/src/main/res/layout/fragment_train_detail.xml" value="0.30225524902343753" />
         <entry key="app/src/main/res/layout/item_car.xml" value="0.24273681640625003" />
-        <entry key="app/src/main/res/layout/item_ticket.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_train.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/layout/item_ticket.xml" value="0.3137359619140625" />
+        <entry key="app/src/main/res/layout/item_train.xml" value="0.21972300211588536" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.12880605061848954" />
       </map>
     </option>

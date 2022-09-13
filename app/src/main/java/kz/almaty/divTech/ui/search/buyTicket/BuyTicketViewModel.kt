@@ -1,11 +1,9 @@
 package kz.almaty.divTech.ui.search.buyTicket
 
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kz.almaty.divTech.MyApplication
 import kz.almaty.divTech.api.Retrofit
-import kz.almaty.divTech.room.TicketDao
 import kz.almaty.divTech.data.Constants
 import kz.almaty.divTech.data.buyTicket.BuyTicket
 import kz.almaty.divTech.data.buyTicket.Order
@@ -20,7 +18,7 @@ class BuyTicketViewModel : ViewModel() {
 
     fun buyTicket(buyTicket: BuyTicket){
         Retrofit.getApi(Constants.BASE_URL)
-            ?.buyTicket(buyTicket)?.enqueue(object : Callback<Order> {
+            .buyTicket(buyTicket).enqueue(object : Callback<Order> {
                 override fun onResponse(call: Call<Order>, response: Response<Order>) {
                     val order = response.body()
                     if(response.isSuccessful){
