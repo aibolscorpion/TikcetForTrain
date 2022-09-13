@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_search">
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="kz.almaty.divTech.ui.search.searchTrain.SearchFragment"
+        android:label="@string/search_tickets"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_trainDetailFragment"
+            app:destination="@id/navigation_train_detail"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="kz.almaty.divTech.ui.profile.ProfileFragment"
+        android:label="@string/my_profile"
+        tools:layout="@layout/fragment_profile" />
+
+
+    <fragment
+        android:id="@+id/navigation_tickets"
+        android:name="kz.almaty.divTech.ui.tickets.TicketsFragment"
+        android:label="@string/purchased_tickets"
+        tools:layout="@layout/fragment_tickets" />
+
+    <fragment
+        android:id="@+id/navigation_train_detail"
+        android:name="kz.almaty.divTech.ui.search.trainDetail.TrainDetailFragment"
+        android:label="@string/choose_train"
+        tools:layout="@layout/fragment_train_detail" >
+
+        <action
+            android:id="@+id/action_trainDetailFragment_to_choosePlaceFragment"
+            app:destination="@id/navigation_choose_place" />
+        <argument
+            android:name="trains"
+            app:argType="kz.almaty.divTech.data.searchTrains.Trains" />
+        <argument
+            android:name="buyTicket"
+            app:argType="kz.almaty.divTech.data.buyTicket.BuyTicket" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_choose_place"
+        android:name="kz.almaty.divTech.ui.search.choosePlace.ChoosePlaceFragment"
+        android:label="@string/choose_place"
+        tools:layout="@layout/fragment_choose_place" >
+        <argument
+            android:name="train"
+            app:argType="kz.almaty.divTech.data.searchTrains.Train" />
+        <action
+            android:id="@+id/action_choosePlaceFragment_to_buyTicket"
+            app:destination="@id/navigation_buy_ticket" />
+        <argument
+            android:name="buyTicket"
+            app:argType="kz.almaty.divTech.data.buyTicket.BuyTicket" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_buy_ticket"
+        android:name="kz.almaty.divTech.ui.search.buyTicket.BuyTicketFragment"
+        android:label="@string/buy_ticket"
+        tools:layout="@layout/fragment_buy_ticket" >
+        <argument
+            android:name="buyTicket"
+            app:argType="kz.almaty.divTech.data.buyTicket.BuyTicket" />
+        <action
+            android:id="@+id/action_navigation_buy_ticket_to_navigation_tickets"
+            app:destination="@id/navigation_tickets" />
+        <argument
+            android:name="train"
+            app:argType="kz.almaty.divTech.data.searchTrains.Train" />
+    </fragment>
+</navigation>

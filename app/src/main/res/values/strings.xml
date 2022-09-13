@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">DivTech</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="departure_city">Город отправления</string>
+    <string name="destination_city">Город прибытия</string>
+    <string name="departure_date">Дата поездки туда</string>
+    <string name="hint_departure_city">AAA</string>
+    <string name="hint_destination_city">DDD</string>
+    <string name="hint_departure_date">13 Сентября</string>
+    <string name="hint_departure_time">13:00</string>
+    <string name="find_tickets">Найти билеты</string>
+    <string name="choose_train">Выбрать поезд</string>
+    <string name="train_number">Поезд: %1$s</string>
+    <string name="search">Поиск</string>
+    <string name="search_tickets">Поиск билетов</string>
+    <string name="tickets">Билеты</string>
+    <string name="purchased_tickets">Купленные билеты</string>
+    <string name="profile">Профиль</string>
+    <string name="my_profile">Мой профиль</string>
+    <string name="choose_place">Выбрать место</string>
+    <string name="buy_ticket">Оформить билет</string>
+    <string name="train">Поезд</string>
+    <string name="coupe">Купе</string>
+    <string name="reserved_seat">Плацкарт</string>
+    <string name="zero">0</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="buy_ticket_button">Купить билет</string>
+    <string name="choose_place_to_continue">Пожалуйста, Выберите место !</string>
+    <string name="car_number">Номер вагона: %1$s</string>
+    <string name="car">Вагон</string>
+    <string name="place">Место</string>
+    <string name="ticket_was_purchased_successfully">Билет успешно куплен ! Номер заказа: %1$d</string>
+    <string name="ticket_was_not_purchased_successfully">Билет не куплен</string>
+    <string name="fill_all_fields">Заполните все поля !</string>
+
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string-array name="cities">
+        <item>AAA</item>
+        <item>BBB</item>
+        <item>CCC</item>
+        <item>DDD</item>
+    </string-array>
+</resources>

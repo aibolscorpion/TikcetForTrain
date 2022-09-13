@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="searchTrains"
+            type="kz.almaty.divTech.data.searchTrains.SearchTrains" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/app_name"
+            android:textColor="@color/purple_500"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/searchTrainCardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchTrainCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.3"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="10dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/departure_city"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp"
+                    />
+                <AutoCompleteTextView
+                    android:id="@+id/departureCityAutoCompleteTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_departure_city"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp" />
+                <!--                    android:text='@{(TextUtils.isEmpty(client.checkInDate) &amp;&amp; TextUtils.isEmpty(client.checkInTime))? "" : client.formatDateForOneSignal(client.checkInDate, client.checkInTime)}'-->
+                <!--                    android:onClick="@{() -> addClientDialogFragment.showCheckInDatePickerDialog()}"/>-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/destination_city"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+                <AutoCompleteTextView
+                    android:id="@+id/arrivalCityAutoCompleteTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_destination_city"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp" />
+                <!--                    android:text='@{(TextUtils.isEmpty(client.checkOutDate) &amp;&amp; TextUtils.isEmpty(client.checkOutTime))? "" : client.formatDateForOneSignal(client.checkOutDate,client.checkOutTime)}'-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/departure_date"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/departureDateEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="@string/hint_departure_date"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="10dp" />
+
+                <!--                    android:text="@={searchTrains.depDate}"-->
+                <!--                    />-->
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/findTicketsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/purple_500"
+                    android:text="@string/find_tickets"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="20dp"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/findTicketsProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationZ="2dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.4"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
