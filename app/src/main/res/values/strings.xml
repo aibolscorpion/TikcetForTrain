@@ -6,7 +6,7 @@
     <string name="departure_date">Дата поездки туда</string>
     <string name="hint_departure_city">AAA</string>
     <string name="hint_destination_city">DDD</string>
-    <string name="hint_departure_date">13 Сентября</string>
+    <string name="hint_departure_date">15 Сентября</string>
     <string name="hint_departure_time">13:00</string>
     <string name="find_tickets">Найти билеты</string>
     <string name="choose_train">Выбрать поезд</string>

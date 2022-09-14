@@ -1,16 +1,15 @@
 package kz.almaty.divTech.ui.search.searchTrain
 
 import android.app.Application
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import kz.almaty.divTech.MyApplication
 import kz.almaty.divTech.data.Constants
 import kz.almaty.divTech.utils.SessionManager
 import kz.almaty.divTech.api.Retrofit
 import kz.almaty.divTech.data.authentication.Authentication
 import kz.almaty.divTech.data.authentication.Token
-import kz.almaty.divTech.data.buyTicket.BuyTicket
 import kz.almaty.divTech.data.searchTrains.SearchTrains
 import kz.almaty.divTech.data.searchTrains.Trains
 import retrofit2.Call
@@ -19,7 +18,7 @@ import retrofit2.Response
 
 class SearchViewModel(application: Application) : AndroidViewModel(application) {
     val sessionManager = SessionManager()
-    val trainsMutableLiveData =  MutableLiveData<Trains>()
+    val trainsMutableLiveData =  MutableLiveData<Event<Trains>>()
     val progressBarLiveData = MutableLiveData<Boolean>()
     fun authenticate(){
         Retrofit.getApi(Constants.BASE_URL).authenticate(Authentication(Constants.APP_KEY, Constants.APP_SECRET))
@@ -45,7 +44,9 @@ class SearchViewModel(application: Application) : AndroidViewModel(application) 
                     progressBarLiveData.postValue(false)
                     val trainsResponse = response.body()
                     if(response.isSuccessful){
-                        trainsMutableLiveData.postValue(trainsResponse!!)
+                        trainsMutableLiveData.postValue(Event(trainsResponse))
+                    }else{
+                        Toast.makeText(MyApplication.appContext, response.message().toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
 

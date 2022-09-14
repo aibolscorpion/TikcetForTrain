@@ -35,7 +35,7 @@ class TicketAdapter(private val ticketList: List<Ticket>?) : RecyclerView.Adapte
         holder.arrivalTimeTextView.text = formattedArrivalDateTime[1]
 
         holder.departureCityTextView.text = ticket?.depStationCode
-        holder.departureCityTextView.text = ticket?.arrStationCode
+        holder.arrivalCityTextView.text = ticket?.arrStationCode
 
         holder.nameTextView.text = ticket?.passenger?.firstName
         holder.surnameTextView.text = ticket?.passenger?.lastName

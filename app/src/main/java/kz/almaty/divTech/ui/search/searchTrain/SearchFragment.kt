@@ -22,7 +22,7 @@ class SearchFragment : Fragment(){
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private lateinit var root : View
-    lateinit var departureCity : String
+    private var departureCity : String?= null
     private var arrivalCity : String? = null
     private var departureDate : String? = null
     @RequiresApi(Build.VERSION_CODES.O)
@@ -37,7 +37,7 @@ class SearchFragment : Fragment(){
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun setupView(){
-        val searchViewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
+        val searchViewModel = ViewModelProvider(this)[SearchViewModel::class.java]
         searchViewModel.authenticate()
 
         val findTicketsButton = root.findViewById<AppCompatButton>(R.id.findTicketsButton)
@@ -68,16 +68,22 @@ class SearchFragment : Fragment(){
         }
 
 
-        searchViewModel.trainsMutableLiveData.observe(viewLifecycleOwner) { trains ->
-            val buyTicket = BuyTicket(departureCity, arrivalCity, DateFormatter.formatDateForRequest(departureDate!!), null, null, null, null)
-            val action = SearchFragmentDirections.actionNavigationSearchToTrainDetailFragment(trains, buyTicket)
+        searchViewModel.trainsMutableLiveData.observe(viewLifecycleOwner) {
+            it.getContentIfNotHandled()?.let {
+            val buyTicket = BuyTicket(departureCity!!, arrivalCity, DateFormatter.formatDateForRequest(departureDate!!), null, null, null, null)
+            val action = SearchFragmentDirections.actionNavigationSearchToTrainDetailFragment(it, buyTicket)
             findNavController().navigate(action)
+                }
         }
         searchViewModel.progressBarLiveData.observe(viewLifecycleOwner){
             findTicketsProgressBar.visibility = View.GONE
         }
 
-        findTicketsButton.setOnClickListener { view ->
+        findTicketsButton.setOnClickListener {
+            if(departureCity == null || arrivalCity == null || departureDate == null){
+                Toast.makeText(requireContext(), getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             findTicketsProgressBar.visibility = View.VISIBLE
             searchViewModel.getListOfTrains(SearchTrains(departureCity, arrivalCity , departureDate))
         }

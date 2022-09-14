@@ -13,22 +13,24 @@
         <action
             android:id="@+id/action_navigation_search_to_trainDetailFragment"
             app:destination="@id/navigation_train_detail"
-            />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
-
-    <fragment
-        android:id="@+id/navigation_profile"
-        android:name="kz.almaty.divTech.ui.profile.ProfileFragment"
-        android:label="@string/my_profile"
-        tools:layout="@layout/fragment_profile" />
-
 
     <fragment
         android:id="@+id/navigation_tickets"
         android:name="kz.almaty.divTech.ui.tickets.TicketsFragment"
         android:label="@string/purchased_tickets"
         tools:layout="@layout/fragment_tickets" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="kz.almaty.divTech.ui.profile.ProfileFragment"
+        android:label="@string/my_profile"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_train_detail"
@@ -38,7 +40,11 @@
 
         <action
             android:id="@+id/action_trainDetailFragment_to_choosePlaceFragment"
-            app:destination="@id/navigation_choose_place" />
+            app:destination="@id/navigation_choose_place"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <argument
             android:name="trains"
             app:argType="kz.almaty.divTech.data.searchTrains.Trains" />
@@ -51,13 +57,21 @@
         android:id="@+id/navigation_choose_place"
         android:name="kz.almaty.divTech.ui.search.choosePlace.ChoosePlaceFragment"
         android:label="@string/choose_place"
-        tools:layout="@layout/fragment_choose_place" >
+        tools:layout="@layout/fragment_choose_place"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" >
         <argument
             android:name="train"
             app:argType="kz.almaty.divTech.data.searchTrains.Train" />
         <action
             android:id="@+id/action_choosePlaceFragment_to_buyTicket"
-            app:destination="@id/navigation_buy_ticket" />
+            app:destination="@id/navigation_buy_ticket"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <argument
             android:name="buyTicket"
             app:argType="kz.almaty.divTech.data.buyTicket.BuyTicket" />
@@ -72,7 +86,9 @@
             app:argType="kz.almaty.divTech.data.buyTicket.BuyTicket" />
         <action
             android:id="@+id/action_navigation_buy_ticket_to_navigation_tickets"
-            app:destination="@id/navigation_tickets" />
+            app:destination="@id/navigation_tickets"
+            app:popUpTo="@id/navigation_search"
+            app:popUpToInclusive="true" />
         <argument
             android:name="train"
             app:argType="kz.almaty.divTech.data.searchTrains.Train" />
